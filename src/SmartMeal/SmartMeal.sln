@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35507.96 d17.13
+VisualStudioVersion = 17.13.35507.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeal", "SmartMeal\SmartMeal.csproj", "{5D81F8EF-0E95-4A30-BC25-550E149F99AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeal.Test", "SmartMeal.Test\SmartMeal.Test.csproj", "{4078F1A5-AA6A-4699-BED7-88D6F860B189}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeal.Client", "SmartMeal.Client\SmartMeal.Client.csproj", "{AD42118B-D5A7-47AC-B68C-AD47A2146768}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,20 @@ Global
 		{5D81F8EF-0E95-4A30-BC25-550E149F99AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D81F8EF-0E95-4A30-BC25-550E149F99AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D81F8EF-0E95-4A30-BC25-550E149F99AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4078F1A5-AA6A-4699-BED7-88D6F860B189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4078F1A5-AA6A-4699-BED7-88D6F860B189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4078F1A5-AA6A-4699-BED7-88D6F860B189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4078F1A5-AA6A-4699-BED7-88D6F860B189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD42118B-D5A7-47AC-B68C-AD47A2146768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD42118B-D5A7-47AC-B68C-AD47A2146768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD42118B-D5A7-47AC-B68C-AD47A2146768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD42118B-D5A7-47AC-B68C-AD47A2146768}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4078F1A5-AA6A-4699-BED7-88D6F860B189} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A7094497-634F-439A-B4F5-06BE457E02BB}

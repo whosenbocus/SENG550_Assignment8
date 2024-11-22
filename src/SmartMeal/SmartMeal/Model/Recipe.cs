@@ -29,29 +29,26 @@
 
         public IReadOnlyList<Ingredient> GetIngredients() => Ingredients.AsReadOnly();
 
-        public void DisplayIngredients()
+        private string DisplayIngredients()
         {
             if (Ingredients.Count == 0)
             {
-                Console.WriteLine("No ingredients available.");
-                return;
+                return string.Empty;
             }
 
-            Console.WriteLine("Ingredients:");
+            string ingredients = "Ingredients:\n";
             foreach (var ingredient in Ingredients)
             {
-                Console.WriteLine($" - {ingredient}");
+                ingredients += $" - {ingredient}\n";
             }
+            return ingredients;
         }
 
-        public virtual void ShareRecipe()
+        internal virtual string ViewRecipe()
         {
-            Console.WriteLine($"Sharing recipe: {Name}");
+            return $"{Name} - {Category}: {Description} (Servings: {Servings}, Prep Time: {PrepTime} mins). {DisplayIngredients()}";
         }
 
-        public override string ToString()
-        {
-            return $"{Name} - {Category}: {Description} (Servings: {Servings}, Prep Time: {PrepTime} mins)";
-        }
+        internal abstract string ShareRecipe();
     }
 }

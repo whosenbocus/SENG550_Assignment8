@@ -4,11 +4,11 @@
     {
         // Properties
         public string Name { get; }
-        public float Quantity { get; }
+        public double Quantity { get; }
         public string Unit { get; }
 
         // Constructor
-        public Ingredient(string name, float quantity, string unit)
+        public Ingredient(string name, double quantity, string unit)
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
             Quantity = quantity > 0 ? quantity : throw new ArgumentOutOfRangeException(nameof(quantity));
@@ -16,7 +16,7 @@
         }
 
         // Methods for creating updated instances
-        public Ingredient WithQuantity(float quantity) => new Ingredient(Name, quantity, Unit);
+        public Ingredient WithQuantity(double quantity) => new Ingredient(Name, quantity, Unit);
         public Ingredient WithUnit(string unit) => new Ingredient(Name, Quantity, unit);
         public Ingredient Update(string name, float quantity, string unit) => new Ingredient(name, quantity, unit);
 

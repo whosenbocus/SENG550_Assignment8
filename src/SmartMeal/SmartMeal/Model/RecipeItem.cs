@@ -21,18 +21,18 @@
             DietaryRestrictions.Remove(restriction);
         }
 
-        // Override ToString method to include dietary restrictions
-        public override string ToString()
+        internal override string ShareRecipe()
         {
-            var restrictions = DietaryRestrictions.Count > 0 ? string.Join(", ", DietaryRestrictions) : "None";
-            return $"{base.ToString()} | Dietary Restrictions: {restrictions}";
+            return $"Recipe Details:\n {ViewRecipe()}";
+
         }
 
-        // Override ShareRecipe method to include dietary restrictions
-        public override void ShareRecipe()
+        // Override ToString method to include dietary restrictions
+        internal override string ViewRecipe()
         {
-            base.ShareRecipe();
-            Console.WriteLine($"Dietary Restrictions: {string.Join(", ", DietaryRestrictions)}");
+            var restrictions = DietaryRestrictions.Count > 0 ? string.Join(", ", DietaryRestrictions) : "None";
+            return $"{base.ViewRecipe()} | Dietary Restrictions: {restrictions}";
         }
+
     }
 }
