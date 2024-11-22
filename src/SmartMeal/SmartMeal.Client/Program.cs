@@ -2,7 +2,6 @@
 using SmartMeal.Data;
 using SmartMeal.Manager;
 using SmartMeal.Model;
-using System.Security.Authentication.ExtendedProtection;
 
 
 var services = new ServiceCollection()
@@ -79,7 +78,7 @@ recipeManager.CreateRecipe(
     );
 
 Console.WriteLine();
-
+Console.WriteLine("Importing Recipe");
 
 //dummy method, will always create the Chocolate Cake recipe
 recipeManager.ImportRecipe("https://www.example.com/recipe");
