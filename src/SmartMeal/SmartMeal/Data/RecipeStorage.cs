@@ -16,7 +16,7 @@ namespace SmartMeal.Data
             recipesStorage = [];
         }
 
-        public void AddRecipe(Recipe recipe)
+        public virtual void AddRecipe(Recipe recipe)
         {
             if (recipe == null)
                 throw new ArgumentNullException(nameof(recipe), "Recipe cannot be null.");
@@ -24,12 +24,12 @@ namespace SmartMeal.Data
             Console.WriteLine($"Recipe '{recipe.Name}' added successfully.");
         }
 
-        public IEnumerable<Recipe> GetRecipes()
+        public virtual IEnumerable<Recipe> GetRecipes()
         {
             return recipesStorage;
         }
 
-        public bool RemoveRecipe(string recipeName)
+        public virtual bool RemoveRecipe(string recipeName)
         {
             var recipe = recipesStorage
                 .Find(r => r.Name.Equals(recipeName, StringComparison.OrdinalIgnoreCase));
