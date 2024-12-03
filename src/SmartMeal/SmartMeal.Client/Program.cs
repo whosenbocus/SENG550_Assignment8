@@ -12,6 +12,12 @@ await using var serviceProvider = services.BuildServiceProvider();
 
 var recipeManager = serviceProvider.GetRequiredService<RecipeManager>();
 
+Console.ForegroundColor = ConsoleColor.Blue;
+Console.WriteLine(".----------------------------------------------------------------------------------------------------------------------------------------.\r\n|███████╗███╗   ███╗ █████╗ ██████╗ ████████╗███╗   ███╗███████╗ █████╗ ██╗                   ██████╗ ███████╗ ██████╗██╗██████╗ ███████╗|\r\n|██╔════╝████╗ ████║██╔══██╗██╔══██╗╚══██╔══╝████╗ ████║██╔════╝██╔══██╗██║                   ██╔══██╗██╔════╝██╔════╝██║██╔══██╗██╔════╝|\r\n|███████╗██╔████╔██║███████║██████╔╝   ██║   ██╔████╔██║█████╗  ███████║██║         █████╗    ██████╔╝█████╗  ██║     ██║██████╔╝█████╗  |\r\n|╚════██║██║╚██╔╝██║██╔══██║██╔══██╗   ██║   ██║╚██╔╝██║██╔══╝  ██╔══██║██║         ╚════╝    ██╔══██╗██╔══╝  ██║     ██║██╔═══╝ ██╔══╝  |\r\n|███████║██║ ╚═╝ ██║██║  ██║██║  ██║   ██║   ██║ ╚═╝ ██║███████╗██║  ██║███████╗              ██║  ██║███████╗╚██████╗██║██║     ███████╗|\r\n|╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝              ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝╚═╝     ╚══════╝|\r\n|                                                                                                                                        |\r\n|██╗   ██╗███████╗███████╗     ██████╗ █████╗ ███████╗███████╗                                                                           |\r\n|██║   ██║██╔════╝██╔════╝    ██╔════╝██╔══██╗██╔════╝██╔════╝                                                                           |\r\n|██║   ██║███████╗█████╗      ██║     ███████║███████╗█████╗                                                                             |\r\n|██║   ██║╚════██║██╔══╝      ██║     ██╔══██║╚════██║██╔══╝                                                                             |\r\n|╚██████╔╝███████║███████╗    ╚██████╗██║  ██║███████║███████╗                                                                           |\r\n| ╚═════╝ ╚══════╝╚══════╝     ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝                                                                           |\r\n'----------------------------------------------------------------------------------------------------------------------------------------'");
+Console.ResetColor();
+Console.WriteLine();
+Console.ForegroundColor = ConsoleColor.Green;
+
 // Create some recipes
 recipeManager.CreateRecipe(
     "Chicken Alfredo",
@@ -31,7 +37,7 @@ recipeManager.CreateRecipe(
     },
     new List<string> { "Gluten-Free" }
 );
-
+Console.WriteLine("✅ Chicken Alfredo Recipe Created");
 Console.WriteLine();
 
 recipeManager.CreateRecipe(
@@ -53,7 +59,7 @@ recipeManager.CreateRecipe(
         },
         new List<string> { "Dairy-Free" }
     );
-
+Console.WriteLine("✅ Beef Tacos Recipe Created");
 Console.WriteLine();
 
 
@@ -77,15 +83,18 @@ recipeManager.CreateRecipe(
         }
     );
 
+Console.WriteLine("✅ Caesar Salad Recipe Created");
 Console.WriteLine();
-Console.WriteLine("Importing Recipe");
+Console.WriteLine("⬇️ Importing Recipe");
 
 //dummy method, will always create the Chocolate Cake recipe
 recipeManager.ImportRecipe("https://www.example.com/recipe");
 
-
+Console.ResetColor();
 Console.WriteLine();
-Console.WriteLine("Filtering by Preference");
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("🔍 Filtering by Preference: DietaryRestrictions = Gluten-Free");
+Console.ResetColor();
 //Search for recipes with dietary restrictions
 var preferences = new Dictionary<string, string>
         {
@@ -108,7 +117,9 @@ else
 }
 
 Console.WriteLine();
-Console.WriteLine("Browsing by Category");
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("🔍 Browsing by Category: Mexican");
+Console.ResetColor();
 //Search for recipes in a specific category
 var category = "Mexican";
 var recipesInCategory = recipeManager.BrowseRecipesByCategory(category);
@@ -127,7 +138,9 @@ else
 }
 
 Console.WriteLine();
-Console.WriteLine("Searching by Keyword");
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("🔍 Searching by Keyword: Chicken");
+Console.ResetColor();
 //Search for recipes by keyword
 var keyword = "Chicken";
 var recipesByKeyword = recipeManager.SearchRecipes(keyword);
@@ -146,7 +159,9 @@ else
 }
 
 Console.WriteLine();
-Console.WriteLine("Sharing Recipe");
+Console.ForegroundColor = ConsoleColor.Green;
+Console.WriteLine("📨 Sharing Recipe");
+Console.ResetColor();
 //Share a recipe
 var recipeToShare = recipeManager.SearchRecipes("Chicken Alfredo")?.FirstOrDefault();
 if (recipeToShare != null)
@@ -158,7 +173,6 @@ else
     Console.WriteLine("Recipe not found.");
 }
 Console.WriteLine();
-
 Console.WriteLine("Press any key to exit.");
 Console.ReadKey();
 return 0;

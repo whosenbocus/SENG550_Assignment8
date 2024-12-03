@@ -105,8 +105,6 @@ public class RecipeManager(RecipeStorage recipeStorage)
     // Create a new recipe with dietary restrictions
     public void CreateRecipe(string name, string description, string instructions, int servings, int prepTime, string category, IEnumerable<Ingredient> ingredients, IEnumerable<string> dietaryRestrictions)
     {
-        Console.WriteLine("Creating recipe with dietary restrictions.");
-
         // Create and add a RecipeItem
         var createdRecipe = new RecipeItem(name, description, instructions, servings, prepTime, category);
 
@@ -114,7 +112,6 @@ public class RecipeManager(RecipeStorage recipeStorage)
         AddDietaryRestrictionsToRecipe(createdRecipe, dietaryRestrictions);
 
         _recipeStorage.AddRecipe(createdRecipe);
-        Console.WriteLine($"Recipe '{createdRecipe.Name}' created successfully.");
     }
 
 
